@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package com.loadwsdl.clientSamat;
+package com.loadwsdl.clientcalculator;
 
-public class CalculatorLocator extends org.apache.axis.client.Service implements com.loadwsdl.clientSamat.Calculator {
+public class CalculatorLocator extends org.apache.axis.client.Service implements com.loadwsdl.clientcalculator.Calculator {
 
     public CalculatorLocator() {
     }
@@ -39,7 +39,7 @@ public class CalculatorLocator extends org.apache.axis.client.Service implements
         CalculatorSoapWSDDServiceName = name;
     }
 
-    public com.loadwsdl.clientSamat.CalculatorSoap_PortType getCalculatorSoap() throws javax.xml.rpc.ServiceException {
+    public com.loadwsdl.clientcalculator.CalculatorSoap_PortType getCalculatorSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(CalculatorSoap_address);
@@ -50,9 +50,9 @@ public class CalculatorLocator extends org.apache.axis.client.Service implements
         return getCalculatorSoap(endpoint);
     }
 
-    public com.loadwsdl.clientSamat.CalculatorSoap_PortType getCalculatorSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public com.loadwsdl.clientcalculator.CalculatorSoap_PortType getCalculatorSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            com.loadwsdl.clientSamat.CalculatorSoap_BindingStub _stub = new com.loadwsdl.clientSamat.CalculatorSoap_BindingStub(portAddress, this);
+            com.loadwsdl.clientcalculator.CalculatorSoap_BindingStub _stub = new com.loadwsdl.clientcalculator.CalculatorSoap_BindingStub(portAddress, this);
             _stub.setPortName(getCalculatorSoapWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class CalculatorLocator extends org.apache.axis.client.Service implements
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (com.loadwsdl.clientSamat.CalculatorSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                com.loadwsdl.clientSamat.CalculatorSoap_BindingStub _stub = new com.loadwsdl.clientSamat.CalculatorSoap_BindingStub(new java.net.URL(CalculatorSoap_address), this);
+            if (com.loadwsdl.clientcalculator.CalculatorSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                com.loadwsdl.clientcalculator.CalculatorSoap_BindingStub _stub = new com.loadwsdl.clientcalculator.CalculatorSoap_BindingStub(new java.net.URL(CalculatorSoap_address), this);
                 _stub.setPortName(getCalculatorSoapWSDDServiceName());
                 return _stub;
             }
